@@ -1,6 +1,7 @@
 package com.tcp.classes.dataPackaging;
 
 import com.tcp.interfaces.dataPackaging.DataPackageInterface;
+import com.tcp.interfaces.dataPackaging.SerializableBiConsumer;
 import com.tcp.interfaces.dataPackaging.SerializableConsumer;
 import com.tcp.interfaces.general.HelperMethods;
 import com.tcp.test.dataPackaging.ActionTest;
@@ -52,5 +53,11 @@ public class SimpleDataPackage<T, A> implements DataPackageInterface, Serializab
 
         EncapsulateAction<A> encapsulateAction = new EncapsulateAction<>(consumer);
         return new SimpleDataPackage(messageHeader, encapsulateAction);
+    }
+
+    public SimpleDataPackage createEncapsulatedBiAction(String messageHeader, SerializableBiConsumer<T, A> consumer) {
+
+        EncapsulateBiAction<T, A> encapsulateBiAction = new EncapsulateBiAction<>(consumer);
+        return new SimpleDataPackage(messageHeader, encapsulateBiAction);
     }
 }

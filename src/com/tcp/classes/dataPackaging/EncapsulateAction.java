@@ -10,6 +10,7 @@ public class EncapsulateAction<T> implements Serializable{
 
     private SerializableConsumer<T> consumer;
 
+
     public EncapsulateAction(SerializableConsumer<T> consumer) {
 
         this.consumer = consumer;
