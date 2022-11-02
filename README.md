@@ -1,2 +1,2 @@
-# SimpleTCPConnection
+# SimpleTCPConnection (Please use SimpleTCP2 instead)
 Finding Java socket programming confusing for beginners, I decided to create a simplified TCP communication library using java sockets. The built-in server and client classes communicate by sending back and forth DataPacket objects which contain a clientId, headerMessage and an object of your choosing. This library specifically has a built-in class to wrap commands using a functional interface in order to transport method calls over to the server and execute them with serverside information/serverside objects. 
